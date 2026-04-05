@@ -62,6 +62,7 @@
         font-weight: bold;
         font-family: 'Arial Narrow', Arial, sans-serif;
         letter-spacing: 0.5px;
+        cursor: pointer;
     }
 
     .nav-bar a.active {
@@ -69,7 +70,7 @@
     }
 
     .main-content {
-        max-width: 700px; /* Kaventaa leipätekstin aluetta */
+        max-width: 700px;
         margin: 20px auto;
         padding: 0 15px;
     }
@@ -150,6 +151,18 @@
         color: #cccccc;
     }
 
+    .code-container {
+        font-family: 'Courier New', Courier, monospace;
+        background-color: #1a1a1a;
+        color: #00ff00;
+        padding: 20px;
+        border-radius: 5px;
+        border: 1px solid #333;
+        white-space: pre-wrap;
+        font-size: 15px;
+        line-height: 1.4;
+    }
+
   </style>
 </head>
 <body>
@@ -164,7 +177,7 @@
 
 <div class="nav-wrapper">
   <nav class="nav-bar">
-    <a href="#" class="active">Etusivu</a>
+    <a href="index.html" class="active">Etusivu</a>
     <a href="#">Uutiset</a>
     <a href="#">Maakansan urheilu</a>
     <a href="#">Viihde</a>
@@ -172,7 +185,7 @@
     <a href="#">Sää</a>
     <a href="#">Vujuvideot</a>
     <a href="#">Autot</a>
-    <a href="#">Yöjäynä</a>
+    <a onclick="aktivoiJayna(event)">Yöjäynä</a>
     <a href="#">Terveys</a>
     <a href="#">Märcää rantsulla</a>
     <a href="#">Hyvä olo</a>
@@ -189,33 +202,81 @@
     <span class="tag">Plus</span> Analyysi: Koneinsinöörikillan uusi kiltahuone rakennetaan genttiin
   </div>
 
-  <article>
+  <!-- Tämän osion sisältö vaihtuu -->
+  <article id="artikkeli-alue">
     <div class="article-kicker">Vakavat rikokset</div>
     <h1 class="article-title">Suojelupoliisi etsii tosi vaarallisia rikollisia – Teekkarit vaaravyöhykkeellä</h1>
-    <p class="article-lead">Epäillyt ovat karkuteillä. Maakansantietäjät vaativat päätähuimaavia rangaistuksia. Luukas valitaan yöjäynäjoukkueeseen.</p>
+    <p class="article-lead">Epäillyt ovat karkuteillä. Maakansantietäjät vaativat päätähuimaavia rangaistuksia. <strong>Luukas valitaan yöjäynäjoukkueeseen.</strong></p>
 
     <div class="article-meta">
       Tänään klo 11:27
     </div>
 
     <div class="article-body">
-      <p>Maanmittarikillan fuksikapteeneja '25 etsitään epäiltynä useista suurta yhteiskunnallista yleisvaaraa tuottavista talousrikoksista. Fuksikapteenit ovat toimikautensa aikana syyllistyneet seuraaviin rikoksiin:</p>
-      <ul>
-        <li>Maanpetoksellinen verovilppi</li>
-        <li>Kiinteistötalousrikos</li>
-        <li>Laiton Etelämanneralueen mineraaliesiintymään kajoaminen</li>
-        <li>Törkeä ammattimainen opintotukipetos</li>
-      </ul>
+      <div class="article-body">
+        <p>Maanmittarikillan fuksikapteeneja '25 etsitään epäiltynä useista suurta yhteiskunnallista yleisvaaraa tuottavista talousrikoksista. Fuksikapteenit ovat toimikautensa aikana syyllistyneet seuraaviin rikoksiin:</p>
+        <ul>
+          <li>Maanpetoksellinen verovilppi</li>
+          <li>Kiinteistötalousrikos</li>
+          <li>Laiton Etelämanneralueen mineraaliesiintymään kajoaminen</li>
+          <li>Törkeä ammattimainen opintotukipetos</li>
+        </ul>
 
-      <p>Maakansantietäjät esittivät keskiviikkona vaatimuksensa fuksikapteenien tuomiosta. Maakansantietäjät vaativat fuksikapteeneille kuuden vuoden ja seitsemän kuukauden velkavankeutta sekä pitkää kakkua.</p>
+        <p>Maakansantietäjät esittivät keskiviikkona vaatimuksensa fuksikapteenien tuomiosta. Maakansantietäjät vaativat fuksikapteeneille kuuden vuoden ja seitsemän kuukauden velkavankeutta sekä pitkää kakkua.</p>
 
-      <p>Toimittajien salaisen lähteen mukaan maakansantietäjät katsovat, että fuksikapteeneille on langetettava myös maastapoistumiskielto kahdeksi vuodeksi. Jatkossa he joutuisivat anomaan ulko- ja kulttuurimestarilta lupaa maasta poistumiseen. Syynä tähän mainitaan kippareiden toistuvat ja yleisesti vaaralliset "laskettelureissut". Toisen fuksikapteenin kerrotaan muun muassa kaatuneen <span style="color: #ffffff;"><strong>nolosti</strong></span> erään laskettelureissun aikana.</p>
+        <p>Toimittajien salaisen lähteen mukaan maakansantietäjät katsovat, että fuksikapteeneille on langetettava myös maastapoistumiskielto kahdeksi vuodeksi. Jatkossa he joutuisivat anomaan ulko- ja kulttuurimestarilta lupaa maasta poistumiseen. Syynä tähän mainitaan kippareiden toistuvat ja yleisesti vaaralliset "laskettelureissut". Toisen fuksikapteenin kerrotaan muun muassa kaatuneen <span style="color: #ffffff;"><strong>nolosti</strong></span> erään laskettelureissun aikana.</p>
 
-      <p>Mahdollisessa kohtaamistilanteessa, jossa siviili joutuu rikoksentekijöiden välittömälle vaikutusalueelle, Suojelupoliisi suosittelee välitöntä kansalaispidätyksen tekemistä yhteiskuntarauhan suojelemiseksi. Suojelupoliisi tekee tapauksessa yhteistyötä FBI:n kanssa.</p>
-    </div>
+        <p>Mahdollisessa kohtaamistilanteessa, jossa siviili joutuu rikoksentekijöiden välittömälle vaikutusalueelle, Suojelupoliisi suosittelee välitöntä kansalaispidätyksen tekemistä yhteiskuntarauhan suojelemiseksi. Suojelupoliisi tekee tapauksessa yhteistyötä FBI:n kanssa.</p>
+      </div>
   </article>
 
 </main>
+
+<script>
+  function aktivoiJayna(e) {
+    e.preventDefault();
+
+    const artikkeli = document.getElementById('artikkeli-alue');
+
+    artikkeli.innerHTML = `
+      <div class="article-kicker">System Terminal / Source Code</div>
+      <h1 class="article-title">Jokin_meni_vikaan.java</h1>
+      <div class="article-body">
+        <div class="code-container">
+
+/**
+ * Mitä teekkarius merkitsee minulle v1.0
+ */
+sanat = 83
+
+public class Essee {
+    public static void main(String[] args) {
+
+        essee = "Teekkariuden ytimessä on vahva teekkarikulttuuri ja minulle onkin merkityksellistä tuntea teekkarikulttuurin hienoa ja pitkää historiaa sekä vaalia vanhoja, ja ei-niin-vanhoja, säilyttämisen arvoisia perinteitä. Teekkarikulttuuri ilmenee konkreettisesti perinteikkäissä tavoissa ja tapahtumissa, kuten lauluissa, vuosijuhlissa ja wapun riennoissa. Erityisenä piirteenä pidän kovasti teekkarikulttuurin veikeästä luonteesta, jota jäynääminen sekä pilke silmäkulmassa toimiminen muun muassa edustavat.
+
+Pidän henkilökohtaisesti erityisen tärkeänä vuorovaikutusta osana teekkarikulttuuria ja aktiivista osallistumista yhteisössä. Yhteisöllisyys näkyy teekkariudessa monella tasolla aina kiltatoiminnasta yhteydenpitoon varhaisempien teekkaripolvien välillä. Teekkarius tarkoittaa minulle ennen kaikkea teekkariyhteisöä ja teekkarikulttuurin historiaa";
+
+        for line in essee
+          fuksikapteeni = readline...
+          {
+            System.out.println(": " + s);
+            if (isGoodEssay(s)) {
+                yojaynajoukkue += Luukas;
+            }
+        }
+    }
+
+    private static void YJ_countdown(int paivat) {
+        System.out.println("Status: Hakemus lähetetty");
+        System.out.println("jäynääminen" + paivat);
+    }
+}
+        </div>
+        <p style="margin-top: 20px;"></p>
+      </div>
+    `;
+  }
+</script>
 
 </body>
 </html>
